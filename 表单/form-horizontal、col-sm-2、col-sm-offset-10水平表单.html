@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.form-horizontal{
+				margin: 10px;
+			}
+		</style>	
+	</head>
+
+	<body>
+		<!--
+			.form-horizontal(.form-水平的)表单水平排列
+			.col-sm-offset-2列偏移
+			.col-sm-10栅格列长度
+		-->
+		<!--
+			.form-group {
+			    margin-bottom: 15px;
+			}
+			.form-horizontal .form-group {
+			    margin-right: -15px;
+			    margin-left: -15px;
+			}
+			@media (min-width: 768px)
+			.form-horizontal .control-label {
+			    padding-top: 7px;
+			    margin-bottom: 0;
+			    text-align: right;
+			}
+			@media (min-width: 768px)
+			.col-sm-2 {
+			    width: 16.66666667%;
+			}
+			@media (min-width: 768px)
+			.col-sm-10 {
+			    width: 83.33333333%;
+			}
+		-->
+		<p>通过为表单添加 .form-horizontal 类，并联合使用 Bootstrap 预置的栅格类，
+			可以将 label 标签和控件组水平并排布局。这样做将改变 .form-group 的行为，
+			使其表现为栅格系统中的行（row），因此就无需再额外添加 .row 了。</p>
+		<form action="" class="form-horizontal">
+			<div class="form-group">
+				<label for="email3" class="col-sm-2 control-label">email</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" id="email3" 
+						value="" placeholder="email"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="password3" class="col-sm-2 control-label">password</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="password3"
+						value="" placeholder="password"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label for="">
+							<input type="checkbox" name="" id="" value="" />remember me
+						</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">sign in</button>
+				</div>
+			</div>
+		</form>
+	</body>
+
+</html>

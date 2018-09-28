@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>	
+	<body>
+		<!--
+			.nav 导航
+			.nav-tabs 表示标签导航
+			.dropdown 下拉		
+			.dropdown-menu
+			.dropdown-toggle 下拉默认显示
+			.divider 表示下拉标签直接的间隔
+			.caret 用三角形表示可以下拉
+			data-toggle="dropdown" 切换成下拉菜单
+			data-target="www.baidu.com" 保持连接可以跳转
+			role="menu" 菜单列表项
+			aria-labelledby="dLabel" 屏幕阅读器读取的数据
+			data-spy="scroll" 滚动监听
+			data-target 和要监听的原素id对应
+			href="#ios" 滚轮滚到的地方
+			data-offset 计算滚动位置时，距离顶部的偏移像素,默认10px
+			.scrollspy('refresh') 当通过 js调用 scrollspy 方法时，调用 refresh 方法来更新 DOM。
+			activate.bs.scrollspy 每当一个新条目被激活后都将由滚动监听插件触发此事件。
+		-->
+		<!--
+			.nav-tabs {
+			    border-bottom: 1px solid #ddd;
+			}
+			.nav {
+			    padding-left: 0;
+			    margin-bottom: 0;
+			    list-style: none;
+			}
+			.nav-tabs > li {
+			    float: left;
+			    margin-bottom: -1px;
+			}
+			
+			.nav > li {
+			    position: relative;
+			    display: block;
+			}
+			.nav-tabs > li.active > a {
+			    color: #555;
+			    cursor: default;
+			    background-color: #fff;
+			    border: 1px solid #ddd;
+			    border-bottom-color: transparent;
+			}
+			
+			.nav-tabs > li > a {
+			    margin-right: 2px;
+			    line-height: 1.42857143;
+			    border: 1px solid transparent;
+			    border-radius: 4px 4px 0 0;
+			}
+			.nav > li > a {
+			    position: relative;
+			    display: block;
+			    padding: 10px 15px;
+			}
+		-->
+		<nav id="myScrollspy" class="navbar navbar-default navbar-static" role="navigation">
+			<div class="container-fluid"> 
+				<div class="navbar-header">
+					<button class="navbar-toggle" type="button" data-toggle="collapse" 
+							data-target=".bs-js-navbar-scrollspy">
+						<span class="sr-only">切换导航</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">教程名称</a>
+				</div>
+				<div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#ios">iOS</a></li>
+						<li><a href="#svn">SVN</a></li>
+						<li class="dropdown">
+							<a href="#" id="navbarDrop1" class="dropdown-toggle" 
+							   data-toggle="dropdown">
+								Java <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" role="menu" 
+								aria-labelledby="navbarDrop1">
+								<li><a href="#jmeter" tabindex="-1">jmeter</a></li>
+								<li><a href="#ejb" tabindex="-1">ejb</a></li>
+								<li class="divider"></li>
+								<li><a href="#spring" tabindex="-1">spring</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div data-spy="scroll" data-target="#myScrollspy" data-offset="0" 
+			 style="height:200px;overflow:auto; position: relative;">
+			<div class="section">
+				<h4 id="ios">iOS<small><a href="#" onclick="removeSection(this);">
+					&times; 删除该部分</a></small>
+				</h4>
+				<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+					TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+			</div>
+			<div class="section">
+				<h4 id="svn">SVN<small></small></h4>
+				<p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
+			</div>
+			<div class="section">
+				<h4 id="jmeter">jMeter<small><a href="#" onclick="removeSection(this);">
+					&times; 删除该部分</a></small>
+				</h4>
+				<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+			</div>
+			<div class="section">
+				<h4 id="ejb">EJB</h4>
+				<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。</p>
+			</div>
+			<div class="section">
+				<h4 id="spring">Spring</h4>
+				<p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+				<p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。</p>
+			</div>
+		</div>
+		<span id="activeitem" style="color:red;"></span>
+		<script type="text/javascript">
+			$(function(){
+				removeSection = function(e) {
+					$(e).parents(".section").remove();
+					$('[data-spy="scroll"]').each(function () {
+						var $spy = $(this).scrollspy('refresh')
+						});
+				}
+				$("#myScrollspy").scrollspy();
+				$('#myScrollspy').on('activate.bs.scrollspy', function () {
+					var currentItem = $(".nav li.active > a").text();
+					$("#activeitem").html("目前您正在查看 - " + currentItem);
+				})
+		});
+		</script>
+	</body>
+</html>

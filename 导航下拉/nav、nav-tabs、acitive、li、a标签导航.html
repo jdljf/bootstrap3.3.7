@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>	
+	<body>
+		<!--
+			.nav 导航
+			.nav-tabs 表示标签导航
+			.dropdown 下拉		
+			.dropdown-menu
+			.dropdown-toggle 下拉默认显示
+			.divider 表示下拉标签直接的间隔
+			.caret 用三角形表示可以下拉
+			data-toggle="dropdown" 切换成下拉菜单
+			data-target="www.baidu.com" 保持连接可以跳转
+			role="menu" 菜单列表项
+			aria-labelledby="dLabel" 屏幕阅读器读取的数据
+		-->
+		<!--
+			.nav-tabs {
+			    border-bottom: 1px solid #ddd;
+			}
+			.nav {
+			    padding-left: 0;
+			    margin-bottom: 0;
+			    list-style: none;
+			}
+			.nav-tabs > li {
+			    float: left;
+			    margin-bottom: -1px;
+			}
+			
+			.nav > li {
+			    position: relative;
+			    display: block;
+			}
+			.nav-tabs > li.active > a {
+			    color: #555;
+			    cursor: default;
+			    background-color: #fff;
+			    border: 1px solid #ddd;
+			    border-bottom-color: transparent;
+			}
+			
+			.nav-tabs > li > a {
+			    margin-right: 2px;
+			    line-height: 1.42857143;
+			    border: 1px solid transparent;
+			    border-radius: 4px 4px 0 0;
+			}
+			.nav > li > a {
+			    position: relative;
+			    display: block;
+			    padding: 10px 15px;
+			}
+		-->
+		<p>标签式的导航菜单</p>
+		<ul class="nav nav-tabs">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#">SVN</a></li>
+		  <li><a href="#">iOS</a></li>
+		  <li><a href="#">VB.Net</a></li>
+		  <li class="dropdown">
+		  	<a data-toggle="dropdown" href="#">
+		  		js
+		  		<i class="caret"></i>
+		  	</a>
+		  	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+		  		<li><a href="">document</a></li>
+		  		<li class="divider"></li>
+		  		<li><a href="">window</a></li>
+		  	</ul>
+		  </li>
+		  <li class="dropdown">
+		  	<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+		  		PHP
+		  		<i class="caret"></i>
+		  	</a>
+		  	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+		  		<li><a href="">thinkphp</a></li>
+		  		<li class="divider"></li>
+		  		<li><a href="">php原生</a></li>
+		  	</ul>
+		  </li>
+		</ul>
+		
+		<script type="text/javascript">
+			// 默认显示，只有一个能起作用
+			$(".dropdown-toggle").dropdown('toggle');
+			$('.dropdown').on('show.bs.dropdown', function () {
+				alert('show.bs.dropdown');
+			}).on('shown.bs.dropdown', function () {
+				alert('shown.bs.dropdown');
+			}).on('hide.bs.dropdown', function () {
+				alert('hide.bs.dropdown');
+			}).on('hiden.bs.dropdown', function () {
+				alert('hiden.bs.dropdown');
+			})
+		</script>
+	</body>
+</html>

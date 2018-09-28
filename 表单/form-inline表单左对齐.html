@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.form-inline{
+				margin: 10px;
+			}
+		</style>	
+	</head>
+
+	<body>
+		<!--
+			.form-inline 类可使其内容左对齐并且表现为 inline-block 级别的控件。
+			为 <form> 元素添加 
+			只适用于视口（viewport）至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。
+			
+			
+		-->
+		<!--
+			.form-group {
+			    margin-bottom: 15px;
+			}
+			label {
+			    display: inline-block;
+			    max-width: 100%;
+			    margin-bottom: 5px;
+			    font-weight: 700;
+			}
+			.form-control {
+			    display: block;
+			    width: 100%;
+			    height: 34px;
+			    padding: 6px 12px;
+			    font-size: 14px;
+			    line-height: 1.42857143;
+			    color: #555;
+			    background-color: #fff;
+			    background-image: none;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			}
+			@media (min-width: 768px)
+			.form-inline .form-control {
+			    display: inline-block;
+			    width: auto;
+			    vertical-align: middle;
+			}
+		-->
+		<h2 class="text-danger">一定要添加label标签</h2>
+		<p>如果你没有为每个输入控件设置 label 标签，屏幕阅读器将无法正确识别。对于这些内联表单，
+			你可以通过为 label 设置 .sr-only 类将其隐藏。还有一些辅助技术提供label标签的替代方案，
+			比如 aria-label、aria-labelledby 或 title 属性。如果这些都不存在，
+			屏幕阅读器可能会采取使用 placeholder 属性，如果存在的话，使用占位符来替代其他的标记，
+			但要注意，这种方法是不妥当的。</p>
+		<form action="" class="form-inline">
+			<div class="form-group">
+				<label for="exampleInputName2">name</label>
+				<input type="text" class="form-control" id="exampleInputName2" 
+					value="" placeholder="Jane Doe"/>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputEmail2" class="sr-only">email</label>
+				<input type="email" class="form-control" id="exampleInputEmail2" 
+					value="" placeholder="jano.doe@example.com"/>
+			</div>
+			
+			<div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Remember me
+		    </label>
+		  </div>
+  
+			<button type="submit" class="btn btn-default">send invitation</button>
+		</form>
+	</body>
+
+</html>

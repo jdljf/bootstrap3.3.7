@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--
+			假如没有clearfix visible-xs-block第一列因为高度比较高
+			屏幕小的时候会让你第三列和第四列在第二列下面而不是另起一行
+			第一列和第二列6+6 >= 12
+			理想状态是第三列和第四列另起一行
+		-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">col-md-4</div>
+				<div class="col-md-4 col-md-offset-3">col-md-4 col-md-offset-3</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+				<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+			</div>
+		</div>
+	</body>
+
+</html>

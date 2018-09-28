@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--
+				.fade 模态框弹出时的淡入淡出效果（删除即没有此效果）
+				.close用于为模态框窗口头部定义样式的类
+				.modal-dialog用于定位模态框和其宽度
+				
+				role="dialog"，用于指定模态框为对话框。
+
+				aria-labelledby="myModalLabel"，该属性应用模态框标题
+				aria-hidden="true"用于保持模态窗口不可见直到触发器触发
+				
+				data-dismiss="modal"，它被用于关闭模态窗口。
+				data-toggle="modal"，HTML5 自定义的 data 属性 data-toggle 用于打开模态窗口。
+				
+				
+				var button = $(event.relatedTarget); //点击元素本身
+				var recipient = button.data('whatever');	//获取点击元素的data-whatever的值
+				$('#..').on('show.bs.modal', function () {})	//模态框完全显示出来前做function处理
+				$('#..').on('shown.bs.modal', function () {})	//模态框完全显示出来后做function处理
+				$('#..').on('hide.bs.modal', function () {})	//模态框完全消失前做function处理
+				$('#..').on('hiden.bs.modal', function () {})	//模态框完全消失后做function处理
+				$('#..').on('show.bs.modal', function () {})	//模态框从远端的数据源加载完数据之后做function处理
+		-->
+		
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+			open modal for @mdo
+		</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">
+			open modal for @fat
+		</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+			open modal for @getbootstrap
+		</button>
+		
+		<div class="modal fede" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="exampleModalLabel">new message</h4>
+					</div>
+					
+					<div class="modal-body">
+						<form action="">
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">Recipient:</label>
+								<input typse="text" class="form-control" id="recipient-name" value="" />
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="control-label">Message:</label>
+								<textarea class="form-control" rows="" cols="" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">send message</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				$('#exampleModal').on('show.bs.modal', function(event) {
+					var button = $(event.relatedTarget);
+					var recipient = button.data('whatever');
+		
+					var modal = $(this);
+					modal.find('.modal-title').text('new message to' + recipient);
+					modal.find('.modal-body input').val(recipient)
+				})
+			}
+		</script>
+	</body>
+
+</html>

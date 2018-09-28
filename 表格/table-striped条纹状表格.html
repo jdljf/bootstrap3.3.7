@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--
+			table，thead，tbody，tfoot表表格
+			tr只能单独用在table标签里，表示一行
+			td放在tr里面，表示一列
+			th放在tr里面，表示一列，但是会加粗字体
+		-->
+		<!--
+			.table-striped（.table-条纹）的类可以给tbody之内的每一行添加斑马条纹样式
+			
+			.table-striped > tbody > tr:nth-of-type(odd) {
+			  background-color: #f9f9f9;
+			}
+			.text-danger {
+			  color: #a94442;
+			}
+		-->
+		<h4 class="text-danger">条纹状表格是依赖 :nth-child CSS 选择器实现的，而这一功能不被 Internet Explorer 8 支持。</h4>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Username</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+				<tr>
+					<th>2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Username</th>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>	
+	<body>
+		<!--
+			.nav 导航
+			.nav-tabs 表示标签导航
+			.caret 用三角形表示可以下拉
+			.tab-content 用于显示的内容框
+			.tab-pane 不内容显示
+			.active 显示内容
+			data-target="www.baidu.com" 保持连接可以跳转
+			role="tab" 标签项
+			aria-controls="home" 跳转到那个页面
+			data-toggle="tab" 标签项
+			href="#ios" 滚轮滚到的地方
+		-->
+		<!--
+			.nav-tabs {
+			    border-bottom: 1px solid #ddd;
+			}
+			.nav {
+			    padding-left: 0;
+			    margin-bottom: 0;
+			    list-style: none;
+			}
+			.nav-tabs > li {
+			    float: left;
+			    margin-bottom: -1px;
+			}
+			
+			.nav > li {
+			    position: relative;
+			    display: block;
+			}
+			.nav-tabs > li.active > a {
+			    color: #555;
+			    cursor: default;
+			    background-color: #fff;
+			    border: 1px solid #ddd;
+			    border-bottom-color: transparent;
+			}
+			
+			.nav-tabs > li > a {
+			    margin-right: 2px;
+			    line-height: 1.42857143;
+			    border: 1px solid transparent;
+			    border-radius: 4px 4px 0 0;
+			}
+			.nav > li > a {
+			    position: relative;
+			    display: block;
+			    padding: 10px 15px;
+			}
+			.tab-content > .tab-pane {
+			    display: none;
+			}
+			.tab-content > .active {
+			    display: block;
+			}
+		-->
+		<div>
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#home" aria-controls="home" 
+						role="tab" data-toggle="tab">home</a>
+				</li>
+				<li role="presentation">
+					<a href="#profile" aria-controls="profile" 
+						role="tab" data-toggle="tab">profile</a>
+				</li>
+				<li role="presentation">
+					<a href="#message" aria-controls="message" 
+						role="tab" data-toggle="tab">message</a>
+				</li>
+				<li role="presentation">
+					<a href="#settings" aria-controls="settings" 
+						role="tab" data-toggle="tab">settings</a>
+				</li>
+			</ul>
+			
+			<div class="tab-content">
+				<div class="tab-pane active" role="tabpanel" id="home">home</div>
+				<div class="tab-pane" role="tabpanel" id="profile">profile</div>
+				<div class="tab-pane" role="tabpanel" id="message">message</div>
+				<div class="tab-pane" role="tabpanel" id="settings">settings</div>
+			</div>
+		</div>
+	</body>
+</html>

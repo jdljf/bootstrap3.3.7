@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--
+			.form-group(.form-组)
+			.form-control使Input100%并且有间距
+		-->
+		<!--
+			.form-group {
+			    margin-bottom: 15px;
+			}
+			label {
+			    display: inline-block;
+			    max-width: 100%;
+			    margin-bottom: 5px;
+			    font-weight: 700;
+			}
+			.form-control {
+			    display: block;
+			    width: 100%;
+			    height: 34px;
+			    padding: 6px 12px;
+			    font-size: 14px;
+			    line-height: 1.42857143;
+			    color: #555;
+			    background-color: #fff;
+			    background-image: none;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			}
+			input[type=file] {
+			    display: block;
+			}
+			.checkbox, .radio {
+			    position: relative;
+			    display: block;
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+			}
+			.checkbox label, .radio label {
+			    min-height: 20px;
+			    padding-left: 20px;
+			    margin-bottom: 0;
+			    font-weight: 400;
+			    cursor: pointer;
+			}
+		-->
+		<h4 class="text-danger">不要将表单直接和输入框混合使用，建议将输入框组嵌套到表单组中使用</h4>
+		<form action="">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1"
+					 value="" placeholder="Email"/>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1"
+					value="" placeholder="password"/>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputFile">file input</label>
+				<input type="file" id="exampleInputFile"/>
+				<p class="help-block">example block-level help text here.</p>
+			</div>
+			
+			<div class="checkbox">
+				<label for="">
+					<input type="checkbox" name="" id="" value=""/>Check me out
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">submit</button>
+		</form>
+	</body>
+
+</html>
